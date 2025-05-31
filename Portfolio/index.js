@@ -52,4 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    const light = document.getElementById('light');
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', e => {
+      const x = e.clientX;
+      const y = e.clientY;
+
+      light.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.99) 40%)`;
+
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
+    });
 });
