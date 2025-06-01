@@ -57,12 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursor = document.getElementById('cursor');
 
     document.addEventListener('mousemove', e => {
-      const x = e.clientX;
-      const y = e.clientY;
+        const x = e.clientX;
+        const y = e.clientY;
 
-      light.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.99) 40%)`;
+        light.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(49, 15, 0, 0.97) 0%, rgba(0,0,0,0.99) 80%)`;
 
-      cursor.style.left = x + 'px';
-      cursor.style.top = y + 'px';
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'px';
     });
 });
