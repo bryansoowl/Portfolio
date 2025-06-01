@@ -135,8 +135,7 @@ h3 {
 }
 
 .about p,
-.experience p,
-.projects a{
+.experience p{
     color: rgb(148, 144, 144);
     text-decoration: none;
 }
@@ -145,8 +144,60 @@ h3 {
     margin-top: 100px;
 }
 
+.projects a {
+    text-decoration: none;
+}
+
+.project-name {
+    color: white;
+}
+
 .projects div{
     margin: 15px;
+}
+
+/* Wave line styles - Add this to your index.css */
+.wave-line {
+    flex-grow: 1;
+    margin: 0 10px;
+    height: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.project-title:hover .wave-line {
+    opacity: 1;
+}
+
+.wave-line svg {
+    width: 100%;
+    height: 3px;
+    display: block;
+}
+
+.project-title {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.project-title:hover {
+    transform: translateX(5px);
+}
+
+.project-description {
+    color: rgb(148, 144, 144);
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.project-year {
+    margin-left: auto;
+    text-decoration: none;
+    color: rgb(148, 144, 144);
+    flex-shrink: 0;
 }
 
 .experience {
