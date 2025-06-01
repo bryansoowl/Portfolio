@@ -53,17 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const light = document.getElementById('light');
-    const cursor = document.getElementById('cursor');
+    const MouseGlow = document.getElementById("MouseGlow");
 
-    document.addEventListener('mousemove', e => {
-        const x = e.clientX;
-        const y = e.clientY;
-
-        light.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(49, 15, 0, 0.97) 0%, rgba(0,0,0,0.99) 80%)`;
-
-        cursor.style.left = x + 'px';
-        cursor.style.top = y + 'px';
+    // Make mouse glow follow mouse
+    window.addEventListener("mousemove", (event) => {
+        MouseGlow.animate({left: `${event.clientX}px`, top: `${event.clientY}px`}, {duration: 3500, fill: "forwards"});
     });
 
     const projectTitles = document.querySelectorAll('.project-title');
@@ -138,4 +132,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         waveElement.animationId = requestAnimationFrame(animate);
     }
+
+    const left = document.querySelector('.slipt.left');
+    const right = document.querySelector('.slipt.right');
+
+    left.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        right.scrollBy({
+            top: e.deltaY * 6,
+            behavior: 'smooth'
+        });
+    }, { passive: false });
 });
