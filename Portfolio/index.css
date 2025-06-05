@@ -192,6 +192,7 @@ h3 {
 
 .project-name {
     color: white;
+    white-space: nowrap;
 }
 
 .projects div{
